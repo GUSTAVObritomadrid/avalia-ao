@@ -1,0 +1,8 @@
+flutter:
+  assets:
+    - img/sea.jpg
+    - img/sup.jpg
+    - img/viagem.jpg
+    - img/montanha.jpg
+    - img/camera.jpg
+    - img/cadastro.png

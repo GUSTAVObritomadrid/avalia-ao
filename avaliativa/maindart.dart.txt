@@ -1,0 +1,348 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'AppAula',
+    home: MyApp(),
+
+
+
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey,
+        title: Text("PicturesForever"),
+      ),
+      body: ListView(
+        children: [
+          Image.asset(
+            "img/sea.jpg",
+
+          ),
+          Text("Aqui você encontra", textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+
+          ),
+          Text("as melhores fotos grátis!", textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+
+          Row (
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(padding: EdgeInsets.only(top: 90)),
+
+              Image.asset("img/sup.jpg",
+              height: 90,
+                width: 110,
+                alignment: Alignment.center,
+
+
+              ),
+              Image.asset(
+                "img/montanha.jpg",
+                height: 90,
+                width: 110,
+              ),
+              Image.asset(
+                "img/viagem.jpg",
+                height: 90,
+                width: 110,
+
+              )
+            ],
+          ),
+          Padding(padding: EdgeInsets.all(32)),
+          Center(
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => app()));
+                },
+                icon: Icon(Icons.arrow_right),
+                label: Text('Acessar App Assistente Virtual'),
+              ))
+        ],
+      ),
+    );
+
+  }
+}
+class app3 extends StatelessWidget {
+  const app3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Login"),
+      ),
+
+      body: Column(
+    children: <Widget>[
+          Padding(padding: EdgeInsets.only(bottom: 32),
+            child: Image.asset("img/cadastro.png", height: 180,),
+
+          ),
+    Padding(padding:EdgeInsets.only(bottom: 10),
+      child: Text("Digite email e senha",
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
+    ),
+
+      TextField(
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+
+            labelText: "Digite seu email",
+
+          )
+      ),
+      TextField(
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+            labelText: "Digite sua senha"
+        ),
+        obscureText: true,
+
+      ),
+      Padding(
+        padding: EdgeInsets.only(top: 15),
+        child: RaisedButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          padding: EdgeInsets.all(15),
+          child: Text(
+            "Logar",
+            style: TextStyle(
+                fontSize: 19
+            ),
+          ),
+          onPressed: (){
+
+          },
+        ),
+      ),
+
+
+    //Text("Gostou do Conteúdo?", textAlign: TextAlign.center,
+    //style: TextStyle(fontSize: 50, color: Colors.blue),
+   // ),
+    //Text("Faça Login:", textAlign: TextAlign.center,
+    //style: TextStyle(fontSize: 50, color: Colors.red),
+   // ),
+      Row (
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Padding(padding: EdgeInsets.only(top: 20)),
+        ],
+      ),
+
+
+
+
+      Padding(padding: EdgeInsets.all(32)),
+      Center(
+          child: ElevatedButton.icon(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyApp()));
+            },
+            icon: Icon(Icons.arrow_right),
+            label: Text('Voltar'),
+          ))
+    ]));
+  }
+}
+
+
+
+
+
+class app extends StatelessWidget {
+  const app({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Assistente Virtual'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.map),
+            title: Text('Viagens'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Map()));
+            },
+          ),
+
+
+
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('Fone'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => fone()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.accessible),
+            title: Text('Acessibilidade'),
+          ),
+          ListTile(
+            leading: Icon(Icons.add_location_sharp),
+            title: Text('Localização'),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text('Pesquisar Tópicos'),
+          ),
+          //Image.asset(
+          //  "img/artificial.jpg",
+            //fit: BoxFit.cover,
+         // ),
+          Padding(padding: EdgeInsets.all(32)),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => app3())
+                );
+              },
+              icon: Icon(Icons.arrow_right),
+              label: Text('Acessar Tela de Login'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+class fone extends StatefulWidget {
+  const fone({Key? key}) : super(key: key);
+
+  @override
+  _foneState createState() => _foneState();
+}
+
+class _foneState extends State<fone> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Fone'),
+      ),
+      body: ListView(
+        children: [
+
+
+          Center(
+            child: Text('Fone - 40028922', style: TextStyle(fontSize: 50),
+            ),
+          ),
+          Padding(padding: EdgeInsets.all(100)),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.arrow_back),
+              label: Text("Voltar"),
+              
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+class Album extends StatelessWidget {
+  const Album ({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Album'),
+      ),
+      body: ListView(
+        children: [
+          Center(
+            child: Text(
+              'Album',
+              style: TextStyle(fontSize: 50)
+            ),
+          ),
+         // Image.asset("img/album.jpg",
+         // fit: BoxFit.cover,
+         // ),
+          Padding(padding: EdgeInsets.all(100),),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: (){
+                Navigator.pop(context);
+                },
+              icon: Icon(Icons.arrow_back),
+              label: Text("Voltar"),
+
+          )
+          
+          ) ],
+
+        ),
+      );
+
+  }
+}
+
+class Map extends StatelessWidget {
+  const Map ({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Viagens'),
+      ),
+      body: ListView(
+        children: [
+          Center(
+            child: Text(
+              'Viagens',
+              style: TextStyle(fontSize: 45),
+            ),
+          ),
+          Image.asset("img/camera.jpg",
+            fit: BoxFit.cover,
+          ),
+          Padding(padding: EdgeInsets.all(100)),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.arrow_back),
+              label: Text("Voltar"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
